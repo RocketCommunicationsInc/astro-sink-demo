@@ -1,0 +1,27 @@
+:root {
+	--ratio: 1;
+	/* --baseFontSize: 0.25rem; */
+	--baseFontSize: 16px;
+
+	/* --font-size-xs: 12px; 
+	--font-size-sm: 14px; 
+	--font-size-base: 16px; 
+	--font-size-lg: 18px; 
+	--font-size-xl: 20px;
+	--font-size-2xl: 24px;
+	--font-size-3xl: 28px;
+	--font-size-4xl: 34px;
+	--font-size-5xl: 48px;
+	--font-size-6xl: 60px; */
+
+	/* --font-size-xs: calc(var(--baseFontSize) * pow(var(--ratio),1));
+	--font-size-sm: calc(var(--baseFontSize) * pow(var(--ratio),2));
+	--font-size-base: calc(var(--baseFontSize) * pow(var(--ratio),3));
+	--font-size-lg: calc(var(--baseFontSize) * pow(var(--ratio),4));
+	--font-size-xl: calc(var(--baseFontSize) * pow(var(--ratio),5));
+	--font-size-2xl: calc(var(--baseFontSize) * pow(var(--ratio),6));
+	--font-size-3xl: calc(var(--baseFontSize) * pow(var(--ratio),7));
+	--font-size-4xl: calc(var(--baseFontSize) * pow(var(--ratio),8)); */
+	/* --font-size-5xl: 48px; //3rem; */
+	/* --font-size-6xl: 60px; //3.75rem; */
+}

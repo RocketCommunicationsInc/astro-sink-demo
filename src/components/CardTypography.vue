@@ -24,7 +24,50 @@
           <li class="rux-body-3-bold" v-if="showBolds">Body 3 Bold</li>
           <li class="rux-control-body-1">Control Body 1</li>
           <li class="rux-control-body-1-bold" v-if="showBolds">Control Body 1 Bold</li>
+         </ul>
 
+         <hr class="my-4">
+         <ul class="flex flex-col gap-4">
+          <li class="text-6xl">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-6xl</p>
+          </li>
+          <li class="text-5xl">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-5xl</p>
+          </li>
+          <li class="text-4xl">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-4xl</p>
+          </li>
+          <li class="text-3xl">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-3xl</p>
+          </li>
+          <li class="text-2xl">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-2xl</p>
+          </li>
+          <li class="text-xl">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-xl</p>
+          </li>
+          <li class="text-lg">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-lg</p>
+          </li>
+          <li class="text-base">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-base</p>
+          </li>
+          <li class="text-sm">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-sm</p>
+          </li>
+          <li class="text-xs">
+            The quick brown fox jumps over the lazy dog
+            <p class="text-sm text-secondary">text-xs</p>
+          </li>
          </ul>
 
       </rux-container>

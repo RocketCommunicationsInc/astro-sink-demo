@@ -1,65 +1,13 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import SampleAppSlideOut from './components/SampleAppSlideOut.vue'
 import  CardTypography  from './components/CardTypography.vue'
-
-const root = document.documentElement;
-let base = ref(4);
-let selectedFont = ref("Roboto");
-let withLetterspacing = ref(true)
+import PropertyControl from './components/PropertyControl.vue'
 
 const segmentedButtonData = [
-  { label: "First segment" },
-  { label: "Second segment", selected: true },
-  { label: "Third segment" }
+	{ label: "First segment" },
+	{ label: "Second segment", selected: true },
+	{ label: "Third segment" }
 ];
-
-const letterspacing = {
-  'sm': '-0.005em',
-  'lg': '0.0015em',
-  'base': '0em',
-  'xl': '0.0025em',
-  '2xl': '0.005em',
-}
-
-
-watch(base, async (newValue) => {
-  setCSSVar('base', `${newValue}px`)
-});
-
-watch(selectedFont, async (newValue) => {
-  setCSSVar('font-family-sans', newValue)
-});
-
-watch(withLetterspacing, async (newValue) => {
-  if (newValue) {
-    restoreLetterspacing()
-  } else {
-    nullifyLetterspacing()
-  }
-});
-
-const setCSSVar = (cssVar: string, value: string) => {
-  root.style.setProperty(`--${cssVar}`, value);
-}
-const resetAll = () => {
-  base.value = 4;
-  selectedFont.value = "Roboto";
-  restoreLetterspacing()
-  withLetterspacing.value = true
-};
-
-const restoreLetterspacing = () => {
-  for (let token of Object.keys(letterspacing)) {
-    //@ts-ignore
-    setCSSVar(`letter-spacing-${token}`, letterspacing[token])
-  }
-}
-
-const nullifyLetterspacing = () => {
-  for (let token of Object.keys(letterspacing)) {
-    setCSSVar(`letter-spacing-${token}`, '0')
-  }
-}
 
 
 
@@ -67,41 +15,8 @@ const nullifyLetterspacing = () => {
 
 <template>
   <div class="container">
-    <section class="mt-4 bg-slate-200 p-4 flex items-center mb-4 rounded-base text-black sticky top-0 z-[9999]">
-      <div class="flex flex-col w-full">
-        <div class="flex ml-auto pb-2">
-          <button @click="resetAll">Reset All</button>
-        </div>
-
-        <div class="flex items-center mb-2">
-          <label for="base" class="">Base Space Unit</label>
-          <div class="flex items-center ml-auto">
-            <input type="range" name="base" id="base" min="1" max="10" v-model="base" class="mr-4" />
-            {{ base }}px
-          </div>
-        </div>
-
-        <div class="flex items-center mb-2">
-          <label for="fontFamily">Font Family</label>
-          <div class="flex items-center ml-auto">
-            <select name="fontFamily" id="fontFamily" v-model="selectedFont" class="">
-              <option value="Roboto">Roboto (Default)</option>
-              <option value="fantasy">Fantasy</option>
-              <option value="system-ui">system</option>
-              <option value="Red Hat Text">Red Hat</option>
-              <option value="Georgia">Segoe</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="flex items-center">
-          <label for="letterspacing">With Letterspacing</label>
-          <div class="flex items-center ml-auto">
-            <input type="checkbox" id="letterspacing" class="w-6 h-6" v-model="withLetterspacing">
-          </div>
-        </div>
-      </div>
-    </section>
+    <PropertyControl/>
+    
 
     <div class="grid gap-4 grid-cols-3">
       <section class="col-span-3 border-red-500">
@@ -434,6 +349,7 @@ const nullifyLetterspacing = () => {
         </div>
       </rux-container>
 
+      <SampleAppSlideOut class="col-span-1"></SampleAppSlideOut>
       
       <rux-card class="col-span-3">
         <div class="flex flex-col gap-2">
@@ -456,7 +372,8 @@ const nullifyLetterspacing = () => {
           message="This is a notification banner. It won’t disappear until the user dismisses it."></rux-notification>
       </rux-card>
 
-      <CardTypography></CardTypography>
+      <CardTypography class="col-span-3"></CardTypography>
+    
       
     </div>
   </div>
@@ -501,7 +418,7 @@ const nullifyLetterspacing = () => {
   --letter-spacing-base: 0em;
   --letter-spacing-xl: 0.0025em;
   --letter-spacing-2xl: 0.005em;
-  --font-size-6xl: 3.75rem;
+  /* --font-size-6xl: 3.75rem;
   --font-size-5xl: 3rem;
   --font-size-4xl: 2.125rem;
   --font-size-3xl: 1.75rem;
@@ -510,7 +427,32 @@ const nullifyLetterspacing = () => {
   --font-size-lg: 1.125rem;
   --font-size-base: 1rem;
   --font-size-sm: 0.875rem;
-  --font-size-xs: 0.75rem;
+  --font-size-xs: 0.75rem; */
+
+  --ratio: 4;
+	/* --baseFontSize: 0.25rem; */
+	--baseFontSize: 16px;
+
+	--font-size-xs: 12px; 
+	--font-size-sm: 14px; 
+	--font-size-base: 16px; 
+	--font-size-lg: 18px; 
+	--font-size-xl: 20px;
+	--font-size-2xl: 24px;
+	--font-size-3xl: 28px;
+	--font-size-4xl: 34px;
+	--font-size-5xl: 48px;
+	--font-size-6xl: 60px; 
+
+	/* --font-size-xs: calc(var(--baseFontSize) * pow(var(--ratio),1));
+	--font-size-sm: calc(var(--baseFontSize) * pow(var(--ratio),2));
+	--font-size-base: calc(var(--baseFontSize) * pow(var(--ratio),3));
+	--font-size-lg: calc(var(--baseFontSize) * pow(var(--ratio),4));
+	--font-size-xl: calc(var(--baseFontSize) * pow(var(--ratio),5));
+	--font-size-2xl: calc(var(--baseFontSize) * pow(var(--ratio),6));
+	--font-size-3xl: calc(var(--baseFontSize) * pow(var(--ratio),7));
+	--font-size-4xl: calc(var(--baseFontSize) * pow(var(--ratio),8)); */
+
   --font-weights-bold: 700;
   --font-weights-medium: 500;
   --font-weights-regular: 400;
