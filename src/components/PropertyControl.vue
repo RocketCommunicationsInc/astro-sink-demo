@@ -1,5 +1,5 @@
 <template>
-	<section class="mt-4 bg-neutral-000 mb-4 rounded-base text-black sticky top-0 z-[9999] property-control">
+	<section class="mt-4 bg-neutral-000 mb-4 rounded-xl text-black sticky top-0 z-[9999] property-control">
 		<div class="flex items-center ml-auto">
 			<button class="flex items-center ml-auto" @click.prevent="visible = !visible">
 				<span class="mr-2"> Configuration </span>
@@ -79,6 +79,7 @@
 </template>
 
 <script setup lang="ts">
+import "../control.css"
 import { ref, watch, reactive } from "vue";
 const root = document.documentElement;
 let visible = ref(true)
@@ -198,7 +199,7 @@ const nullifyLetterspacing = () => {
 
 </script>
 
-<style scoped>
+<style>
 .property-control {
 	font-family: 'system-ui';
 	padding: 1rem;
@@ -206,27 +207,4 @@ const nullifyLetterspacing = () => {
 	letter-spacing: 0;
 }
 
-.mb-2 {
-	margin-bottom: 1rem;
-}
-
-.mb-4 {
-	margin-bottom: 2rem;
-}
-
-.mr-2 {
-	margin-right: 1rem;
-}
-
-.mr-4 {
-	margin-right: 2rem;
-}
-
-.pb-2 {
-	padding-bottom: 1rem;
-}
-
-.p-4 {
-	padding: 2rem;
-}
 </style>

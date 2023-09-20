@@ -1,0 +1,407 @@
+<script setup lang="ts">
+import "./style.css";
+import SampleAppSlideOut from './components/SampleAppSlideOut.vue'
+import  CardTypography  from './components/CardTypography.vue'
+import GRMEquipmentJobDetails from './components/GRMEquipmentJobDetails.vue';
+
+const segmentedButtonData = [
+	{ label: "First segment" },
+	{ label: "Second segment", selected: true },
+	{ label: "Third segment" }
+];
+
+
+
+</script>
+
+<template>
+  <div class="container">
+    
+
+    <div class="grid gap-4 grid-cols-3">
+      <section class="col-span-3 border-red-500">
+        <rux-card>
+          <rux-classification-marking></rux-classification-marking>
+          <rux-global-status-bar app-name="App"></rux-global-status-bar>
+          <rux-breadcrumb class="mx-2">
+            <rux-breadcrumb-item href="#"><rux-icon icon="home"></rux-icon>
+              Home</rux-breadcrumb-item>
+            <rux-breadcrumb-item href="#"><rux-icon icon="border-clear"></rux-icon> Second
+              Item</rux-breadcrumb-item>
+            <rux-breadcrumb-item><rux-icon icon="person"></rux-icon>Current
+              Item</rux-breadcrumb-item>
+          </rux-breadcrumb>
+        </rux-card>
+      </section>
+
+      <rux-card>
+        <rux-accordion>
+          <rux-accordion-item>
+            <div slot="label">Title 1</div>
+            <p>Content 1</p>
+          </rux-accordion-item>
+          <rux-accordion-item>
+            <div slot="label">Title 2</div>
+            <p>Content 2</p>
+          </rux-accordion-item>
+          <rux-accordion-item>
+            <div slot="label">Title 3</div>
+            <p>Content 3</p>
+          </rux-accordion-item>
+        </rux-accordion>
+      </rux-card>
+
+      <rux-card class="">
+        <rux-container>
+          <header slot="header">Header</header>
+
+          <div slot="footer" class="flex items-center">
+            <rux-button borderless>Cancel</rux-button>
+            <div class="flex items-center gap-4 ml-auto">
+              <rux-button secondary>Deny</rux-button>
+              <rux-button>Accept</rux-button>
+            </div>
+          </div>
+        </rux-container>
+      </rux-card>
+
+      <rux-card class="overflow-hidden">
+        <rux-table class="">
+          <rux-table-header>
+            <rux-table-header-row>
+              <rux-table-header-cell>
+                Header text
+              </rux-table-header-cell>
+              <rux-table-header-cell>
+                Header text
+              </rux-table-header-cell>
+              <rux-table-header-cell> </rux-table-header-cell>
+            </rux-table-header-row>
+          </rux-table-header>
+          <rux-table-body>
+            <rux-table-row>
+              <rux-table-cell>Table text</rux-table-cell>
+              <rux-table-cell>Table text</rux-table-cell>
+              <rux-table-cell>
+                <div class="flex items-center gap-4 justify-end">
+                  <rux-button icon-only secondary icon="create" size="small"></rux-button>
+                  <rux-button icon-only secondary icon="history" size="small"></rux-button>
+                  <rux-button icon-only secondary icon="delete" size="small"></rux-button>
+                </div>
+              </rux-table-cell>
+            </rux-table-row>
+            <rux-table-row>
+              <rux-table-cell>Table text</rux-table-cell>
+              <rux-table-cell>Table text</rux-table-cell>
+              <rux-table-cell>
+                <div class="flex items-center gap-4 justify-end">
+                  <rux-button icon-only secondary icon="create" size="small"></rux-button>
+                  <rux-button icon-only secondary icon="history" size="small"></rux-button>
+                  <rux-button icon-only secondary icon="delete" size="small"></rux-button>
+                </div>
+              </rux-table-cell>
+            </rux-table-row>
+            <rux-table-row>
+              <rux-table-cell>Table text</rux-table-cell>
+              <rux-table-cell>Table text</rux-table-cell>
+              <rux-table-cell>
+                <div class="flex items-center gap-4 justify-end">
+                  <rux-button icon-only secondary icon="create" size="small"></rux-button>
+                  <rux-button icon-only secondary icon="history" size="small"></rux-button>
+                  <rux-button icon-only secondary icon="delete" size="small"></rux-button>
+                </div>
+              </rux-table-cell>
+            </rux-table-row>
+            <rux-table-row>
+              <rux-table-cell>Table text</rux-table-cell>
+              <rux-table-cell>Table text</rux-table-cell>
+              <rux-table-cell>
+                <div class="flex items-center gap-4 justify-end">
+                  <rux-button icon-only secondary icon="create" size="small"></rux-button>
+                  <rux-button icon-only secondary icon="history" size="small"></rux-button>
+                  <rux-button icon-only secondary icon="delete" size="small"></rux-button>
+                </div>
+              </rux-table-cell>
+            </rux-table-row>
+          </rux-table-body>
+        </rux-table>
+      </rux-card>
+
+      <rux-card class="col-span-3">
+        <rux-timeline timezone="America/New_York" start="2021-02-01T00:00:00.000Z" end="2021-02-03T00:00:00.000Z"
+          playhead="2021-02-01T04:00:00.000Z" interval="hour" zoom="2">
+          <rux-track>
+            <div slot="label">Region 1</div>
+            <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T02:00:00Z" status="serious">
+              Event 1.2
+            </rux-time-region>
+          </rux-track>
+          <rux-track>
+            <div slot="label">Region 2</div>
+            <rux-time-region start="2021-02-01T10:00:00Z" end="2021-02-01T12:00:00Z" status="serious">
+              Event 2.1
+            </rux-time-region>
+          </rux-track>
+          <rux-track>
+            <div slot="label">Region 3</div>
+            <rux-time-region start="2021-02-01T00:00:00Z" end="2021-02-02T02:00:00Z" status="standby">
+              Event 3.1
+            </rux-time-region>
+          </rux-track>
+          <rux-track>
+            <div slot="label">Region 4</div>
+            <rux-time-region start="2021-02-01T03:00:00Z" end="2021-02-02T04:33:00Z" status="critical">
+              Event 4.1
+            </rux-time-region>
+          </rux-track>
+          <rux-track>
+            <div slot="label">Region 5</div>
+            <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="caution">
+              Event 5.1
+            </rux-time-region>
+          </rux-track>
+          <rux-track>
+            <div slot="label">Region 6</div>
+            <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="normal">
+              Event 6.1
+            </rux-time-region>
+          </rux-track>
+          <rux-track>
+            <div slot="label">Region 7</div>
+            <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="normal">
+              Event 7.1
+            </rux-time-region>
+          </rux-track>
+          <rux-track slot="ruler">
+            <rux-ruler></rux-ruler>
+          </rux-track>
+        </rux-timeline>
+      </rux-card>
+
+      <rux-container class="col-span-2">
+        <div slot="header">Sign In</div>
+        <form class="flex flex-col items-center m-8 gap-y-8">
+          <rux-input type="email" label="Email" placeholder="example@example.com" class="w-5/6"></rux-input>
+          <div class="w-5/6">
+            <rux-input type="password" label="Password" placeholder="Enter password"></rux-input>
+            <rux-checkbox label="Remember me" class="my-2"></rux-checkbox>
+            <div class="flex w-full justify-end my-2">
+              <rux-button type="submit">Sign In</rux-button>
+            </div>
+          </div>
+        </form>
+      </rux-container>
+
+      <rux-card class="col-span-1">
+        <div class="grid grid-cols-2 p-4 gap-4">
+          <rux-monitoring-progress-icon progress="10" label="Minas Tirith" sublabel="Area"
+            class="m-auto"></rux-monitoring-progress-icon>
+          <rux-monitoring-progress-icon progress="20" label="Gondor" sublabel="Area"
+            class="m-auto"></rux-monitoring-progress-icon>
+          <rux-monitoring-progress-icon progress="40" label="Barad-dûr" sublabel="Area"
+            class="m-auto"></rux-monitoring-progress-icon>
+          <rux-monitoring-progress-icon progress="50" label="Osgiliath" sublabel="Area"
+            class="m-auto"></rux-monitoring-progress-icon>
+          <rux-monitoring-progress-icon progress="70" label="The Shire" sublabel="Area"
+            class="m-auto"></rux-monitoring-progress-icon>
+          <rux-monitoring-progress-icon progress="90" label="Rohan" sublabel="Area"
+            class="m-auto"></rux-monitoring-progress-icon>
+        </div>
+      </rux-card>
+
+      <GRMEquipmentJobDetails class="col-span-2"></GRMEquipmentJobDetails>
+      <rux-card>
+        <div slot="header" style="display: flex; align-items: center">
+          <rux-pop-up open="true" placement="bottom" disable-auto-update="">
+            <rux-icon icon="apps" slot="trigger" size="26px" class="mr-4"></rux-icon>
+            <rux-menu>
+              <rux-menu-item href="#">Menu Item 1</rux-menu-item>
+              <rux-menu-item href="#">Menu Item 2</rux-menu-item>
+              <rux-menu-item href="#">Menu Item 3</rux-menu-item>
+            </rux-menu>
+          </rux-pop-up>
+
+          Card Title
+        </div>
+        <div style="
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        display: flex;
+                        justify-content: center;
+                    ">
+          <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M139.65 70C139.65 108.467 108.467 139.65 70 139.65C31.5334 139.65 0.35 108.467 0.35 70C0.35 31.5334 31.5334 0.35 70 0.35C108.467 0.35 139.65 31.5334 139.65 70Z"
+              stroke="black" stroke-width="0.7"></path>
+            <circle cx="70" cy="70" r="41.65" stroke="black" stroke-width="0.7"></circle>
+            <path
+              d="M69.3044 28L69.3044 0.700024C109.605 0.700026 139.3 32.2 139.3 70.7L112.002 70.7C112.002 45.5 92.4029 28 69.3044 28Z"
+              fill="#AEA8E5"></path>
+            <path
+              d="M69.3044 112L69.3044 139.3C109.605 139.3 139.3 107.45 139.3 70.7L112.002 70.7C111.302 93.45 92.7529 112 69.3044 112Z"
+              fill="#938BDB"></path>
+            <path
+              d="M69.3044 28L69.3044 0.702855C30.8085 0.349326 0.00881784 33.6 0.711748 70.7L27.9982 70.7C27.9982 45.85 47.597 28.35 69.3044 28Z"
+              fill="#302C54"></path>
+            <path
+              d="M69.3044 112L69.3044 139.3C30.1086 139.3 0.361846 106.75 0.711796 70.7L27.9982 70.7C28.6963 94.15 47.247 111.65 69.3044 112Z"
+              fill="#6058A8"></path>
+          </svg>
+        </div>
+        <div slot="footer" style="justify-content: center; display: flex">
+          <rux-button size="small">Primary button</rux-button>
+        </div>
+      </rux-card>
+
+      <rux-card>
+        <div class="grid grid-cols-2 gap-4">
+          <rux-clock class="m-auto"></rux-clock>
+          <rux-monitoring-icon class="m-auto"></rux-monitoring-icon>
+          <rux-indeterminate-progress class="m-auto"></rux-indeterminate-progress>
+          <rux-monitoring-icon class="m-auto" icon="altitude" label="Monitoring" status="normal" notifications="1"
+            sublabel="" size="2.5rem"></rux-monitoring-icon>
+          <div class="m-auto flex gap-4">
+            <rux-tag status="pass"> </rux-tag>
+            <rux-tag status="fail"> </rux-tag>
+            <rux-tag status="unknown"> </rux-tag>
+          </div>
+
+          <rux-progress class="col-span-2" value="1"></rux-progress>
+          <rux-push-button checked label="Push Button"></rux-push-button>
+
+
+          <rux-switch></rux-switch>
+        </div>
+        <rux-segmented-button class="mt-4" :data="segmentedButtonData"></rux-segmented-button>
+      </rux-card>
+
+      <rux-container style="--body-padding: 0" class="overflow-hidden">
+        <div slot="header">Parent container title</div>
+        <div slot="tab-bar">
+          <rux-tabs id="tab-set-id-2" small="">
+            <rux-tab id="tab-id-4">Tab 1</rux-tab>
+            <rux-tab id="tab-id-5">Tab 2</rux-tab>
+            <rux-tab id="tab-id-6" disabled="">
+              Tab 3 (disabled)
+            </rux-tab>
+          </rux-tabs>
+        </div>
+        <div slot="toolbar">
+          <rux-slider></rux-slider>
+        </div>
+        <div>
+          <rux-tab-panels aria-labelledby="tab-set-id-2">
+            <rux-tab-panel aria-labelledby="tab-id-4">
+              <rux-table>
+                <rux-table-header>
+                  <rux-table-header-row>
+                    <rux-table-header-cell>
+                      Header text
+                    </rux-table-header-cell>
+                    <rux-table-header-cell>
+                      Header text
+                    </rux-table-header-cell>
+                    <rux-table-header-cell>
+                      Header text
+                    </rux-table-header-cell>
+                    <rux-table-header-cell>
+                      Header text
+                    </rux-table-header-cell>
+                  </rux-table-header-row>
+                </rux-table-header>
+                <rux-table-body>
+                  <rux-table-row>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                  </rux-table-row>
+                  <rux-table-row>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                  </rux-table-row>
+                  <rux-table-row>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                  </rux-table-row>
+                  <rux-table-row>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                    <rux-table-cell>Table text</rux-table-cell>
+                  </rux-table-row>
+                </rux-table-body>
+              </rux-table>
+            </rux-tab-panel>
+            <rux-tab-panel aria-labelledby="tab-id-5">
+              <div style="padding: 1.25rem">
+                Tab 2 HTML content
+              </div>
+            </rux-tab-panel>
+            <rux-tab-panel aria-labelledby="tab-id-6">Tab 3 HTML content</rux-tab-panel>
+          </rux-tab-panels>
+        </div>
+        <div slot="footer">
+          <rux-button style="width: 100%">Primary Button</rux-button>
+        </div>
+      </rux-container>
+
+      <SampleAppSlideOut class="col-span-1"></SampleAppSlideOut>
+      
+      <rux-card class="col-span-3">
+        <div class="flex flex-col gap-2">
+          <rux-classification-marking classification="cui"></rux-classification-marking>
+          <rux-classification-marking classification="controlled"></rux-classification-marking>
+          <rux-classification-marking classification="confidential"></rux-classification-marking>
+          <rux-classification-marking classification="secret"></rux-classification-marking>
+          <rux-classification-marking classification="top-secret"></rux-classification-marking>
+          <rux-classification-marking classification="top-secret-sci"></rux-classification-marking>
+          <rux-classification-marking classification="unclassified"></rux-classification-marking>
+        </div>
+      </rux-card>
+
+      <rux-card class="col-span-3">
+        <rux-notification open status="standby"
+          message="This is a notification banner. It won’t disappear until the user dismisses it."></rux-notification>
+        <rux-notification open status="serious"
+          message="This is a notification banner. It won’t disappear until the user dismisses it."></rux-notification>
+        <rux-notification open status="critical"
+          message="This is a notification banner. It won’t disappear until the user dismisses it."></rux-notification>
+      </rux-card>
+
+      <CardTypography class="col-span-3"></CardTypography>
+    
+      
+    </div>
+  </div>
+</template>
+
+<style>
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+
+
+rux-card {
+  --body-padding: 0;
+  overflow: hidden;
+}
+
+
+
+</style>
