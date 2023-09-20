@@ -2,6 +2,7 @@
 import SampleAppSlideOut from './components/SampleAppSlideOut.vue'
 import  CardTypography  from './components/CardTypography.vue'
 import PropertyControl from './components/PropertyControl.vue'
+import GRMEquipmentJobDetails from './components/GRMEquipmentJobDetails.vue';
 
 const segmentedButtonData = [
 	{ label: "First segment" },
@@ -209,6 +210,7 @@ const segmentedButtonData = [
         </div>
       </rux-card>
 
+      <GRMEquipmentJobDetails class="col-span-2"></GRMEquipmentJobDetails>
       <rux-card>
         <div slot="header" style="display: flex; align-items: center">
           <rux-pop-up open="true" placement="bottom" disable-auto-update="">
