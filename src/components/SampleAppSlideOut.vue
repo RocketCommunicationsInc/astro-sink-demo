@@ -1,6 +1,9 @@
 <template>
 	<rux-container>
-		<header slot="header">Container title</header>
+		<header slot="header" class="flex items-center">
+			<rux-classification-marking tag classification="secret" class="mr-2"></rux-classification-marking>
+			Container title
+		</header>
 		<section class="p-4">
 
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -59,6 +62,7 @@
 				</div>
 			</div>
 
+			
 		</footer>
 		
 	</rux-container>
