@@ -79,7 +79,7 @@
 </template>
 
 <script setup lang="ts">
-import "../control.css"
+// import "../control.css"
 import { ref, watch, reactive } from "vue";
 const root = document.documentElement;
 let visible = ref(true)
@@ -199,7 +199,8 @@ const nullifyLetterspacing = () => {
 
 </script>
 
-<style>
+<style scoped>
+@import "../control.css";
 .property-control {
 	font-family: 'system-ui';
 	padding: 1rem;

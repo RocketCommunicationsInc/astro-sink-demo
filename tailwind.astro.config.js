@@ -210,57 +210,28 @@ export default {
       sans: ['var(--font-family-sans)']
     },
     fontSize: {
-      xs: ['var(--font-size-xs)', 
-      // { lineHeight: 'var(--font-size-xs)' }
-    ],
-      sm: [
-        'var(--font-size-sm)',
-        // { lineHeight: 'var(--line-height-sm)' }
-      ],
-      base: [
-        'var(--font-size-base)',
-        // { lineHeight: 'var(--line-height-base)' }
-      ],
-      lg: [
-        'var(--font-size-lg)',
-        // { lineHeight: 'var(--line-height-lg)' }
-      ],
-      xl: [
-        'var(--font-size-xl)',
-        // { lineHeight: 'var(--line-height-xl)' }
-      ],
-      '2xl': [
-        'var(--font-size-2xl)',
-        // { lineHeight: 'var(--line-height-lg)' }
-      ],
-      '3xl': [
-        'var(--font-size-3xl)',
-        // { lineHeight: 'var(--line-height-xl)' }
-      ],
-      '4xl': [
-        'var(--font-size-4xl)',
-        // { lineHeight: 'var(--line-height-2xl)' }
-      ],
-      '5xl': [
-        'var(--font-size-5xl)',
-        // { lineHeight: 'var(--line-height-xs)' }
-      ],
-      '6xl': [
-        'var(--font-size-6xl)',
-        // { lineHeight: 'var(--line-height-xs)' }
-      ]
+      xs: ['var(--font-size-xs)', 1.5],
+      sm: ['var(--font-size-sm)', 1.5],
+      base: ['var(--font-size-base)', 1.5],
+      lg: ['var(--font-size-lg)', 1.25],
+      xl: ['var(--font-size-xl)', 1.25],
+      '2xl': ['var(--font-size-2xl)', 1.25],
+      '3xl': ['var(--font-size-3xl)', 1.25],
+      '4xl': ['var(--font-size-4xl)', 1.25],
+      '5xl': ['var(--font-size-5xl)', 1.25],
+      '6xl': ['var(--font-size-6xl)', 1.25]
     },
     lineHeight: {
-      none: '1',
-      '2x': 'var(--line-height-2xs)',
-      'xs': 'var(--line-height-xs)',
-      'sm': 'var(--line-height-sm)',
-      'base': 'var(--line-height-base)',
-      'lg': 'var(--line-height-lg)',
-      'xl': 'var(--line-height-xl)',
-      '2xl': 'var(--line-height-2xl)',
-      '3xl': 'var(--line-height-3xl)',
-      '4xl': 'var(--line-height-4xl)'
+      // none: '1',
+      // '2x': 'var(--line-height-2xs)',
+      // 'xs': 'var(--line-height-xs)',
+      // 'sm': 'var(--line-height-sm)',
+      // 'base': 'var(--line-height-base)',
+      // 'lg': 'var(--line-height-lg)',
+      // 'xl': 'var(--line-height-xl)',
+      // '2xl': 'var(--line-height-2xl)',
+      // '3xl': 'var(--line-height-3xl)',
+      // '4xl': 'var(--line-height-4xl)'
     },
     fontWeight: {
       light: 'var(--font-weights-light)',

@@ -70,6 +70,51 @@
           </li>
          </ul>
 
+         <hr> 
+
+         <ul class="flex flex-col gap-4 w-1/2">
+          <li class="text-6xl">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
+            <p class="text-right text-sm text-secondary">text-6xl</p>
+          </li>
+          <li class="text-5xl">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
+            <p class="text-right text-sm text-secondary">text-5xl</p>
+          </li>
+          <li class="text-4xl">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
+            <p class="text-right text-sm text-secondary">text-4xl</p>
+          </li>
+          <li class="text-3xl">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
+            <p class="text-right text-sm text-secondary">text-3xl</p>
+          </li>
+          <li class="text-2xl">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had."</p>
+            <p class="text-right text-sm text-secondary">text-2xl</p>
+          </li>
+          <li class="text-xl">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had."</p>
+            <p class="text-right text-sm text-secondary">text-xl</p>
+          </li>
+          <li class="text-lg">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had."</p>
+            <p class="text-right xtext-sm text-secondary">text-lg</p>
+          </li>
+          <li class="text-base">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had. He didn't say any more but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence I'm inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores."</p>
+            <p class="text-right text-sm text-secondary">text-base</p>
+          </li>
+          <li class="text-sm">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had. He didn't say any more but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence I'm inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores."</p>
+            <p class="text-right text-sm text-secondary">text-sm</p>
+          </li>
+          <li class="text-xs">
+            <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had. He didn't say any more but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence I'm inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores."</p>
+            <p class="text-right text-sm text-secondary">text-xs</p>
+          </li>
+         </ul>
+
       </rux-container>
 </template>
 

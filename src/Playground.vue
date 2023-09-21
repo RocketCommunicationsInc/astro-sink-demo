@@ -15,8 +15,9 @@ const segmentedButtonData = [
 </script>
 
 <template>
-  <div class="container">
+  <div class="container ">
     
+	<span class="text-base">yo</span>
 
     <div class="grid gap-4 grid-cols-3">
       <section class="col-span-3 border-red-500">
