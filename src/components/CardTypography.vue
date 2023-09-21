@@ -73,7 +73,7 @@
          <hr class="my-4"> 
 
          <ul class="flex flex-col gap-4 w-1/2">
-          <li class="text-6xl">
+          <li class="text-6xl leading-normal">
             <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
             <p class="text-right text-sm text-secondary">text-6xl / line-height-tight</p>
           </li>
@@ -121,7 +121,10 @@
             <li>
               <p class="leading-tight">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had. He didn't say any more but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence I'm inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores."</p>
               <p class="text-right text-sm text-secondary">line-height-tight</p>
-
+            </li>
+            <li>
+              <p class="leading-normal">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had. He didn't say any more but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence I'm inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores."</p>
+              <p class="text-right text-sm text-secondary">line-height-normal</p>
             </li>
             <li>
               <p class="leading-relaxed">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had. He didn't say any more but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence I'm inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores."</p>
@@ -131,6 +134,7 @@
               <p class="leading-loose">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had. He didn't say any more but we've always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence I'm inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores."</p>
               <p class="text-right text-sm text-secondary">line-height-loose</p>
             </li>
+            
 
 
          
