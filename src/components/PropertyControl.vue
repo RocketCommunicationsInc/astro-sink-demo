@@ -20,60 +20,132 @@
 			</button>
 		</div>
 		<div class="flex flex-col w-full" v-if="visible">
-			<div class="flex ml-auto pb-2">
-				<button @click="resetAll">Reset All</button>
-			</div>
 
-			<div class="flex items-center mb-2">
-				<label for="base" class="">Base Space Unit</label>
-				<div class="flex items-center ml-auto">
-					<input type="range" name="base" id="base" min="1" max="10" v-model="base" class="mr-4" />
-					{{ base }}px
+
+
+
+			<fieldset>
+				<legend class="text-lg mb-2 font-bold">Spacing</legend>
+				<div class="space-y-2">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center"
+						for=":r1u:-form-item">
+						Base Spacing Unit
+						<span class="ml-auto">(px)</span>
+					</label>
+					<input v-model="base"
+						class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+						id=":r1u:-form-item" aria-describedby=":r1u:-form-item-description" type="number" name="name" />
 				</div>
-			</div>
+			</fieldset>
 
-			<div class="flex items-center mb-2">
-				<label for="fontFamily">Font Family</label>
-				<div class="flex items-center ml-auto">
-					<select name="fontFamily" id="fontFamily" v-model="selectedFont" class="">
-						<option value="Roboto">Roboto (Default)</option>
-						<option value="fantasy">Fantasy</option>
-						<option value="system-ui">system</option>
-						<option value="Red Hat Text">Red Hat</option>
-						<option value="Georgia">Segoe</option>
-					</select>
+			<fieldset class="mt-4">
+				<legend class="text-lg mb-2 font-bold">Typography</legend>
+
+				<div class="space-y-2 mb-4">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						for=":r1o:-form-item">Font</label>
+					<div class="relative w-max">
+						<select
+							class="inline-flex items-center justify-center rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 w-[200px] appearance-none bg-transparent font-normal"
+							name="font" id=":r1o:-form-item" aria-describedby=":r1o:-form-item-description"
+							aria-invalid="false" v-model="selectedFont">
+							<option value="Roboto">Roboto (Default)</option>
+							<option value="fantasy">Fantasy</option>
+							<option value="system-ui">system</option>
+							<option value="Red Hat Text">Red Hat</option>
+							<option value="Georgia">Segoe</option>
+						</select>
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+							class="absolute right-3 top-2.5 h-4 w-4 opacity-50">
+							<path
+								d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
+								fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+						</svg>
+					</div>
+					<!-- <p id=":r1o:-form-item-description" class="text-[0.8rem] text-muted-foreground">
+						Set the font you want to use
+					</p> -->
 				</div>
-			</div>
 
-			<div class="flex items-center mb-2">
-				<label for="letterspacing">With Letterspacing</label>
-				<div class="flex items-center ml-auto">
-					<input type="checkbox" id="letterspacing" class="" v-model="withLetterspacing">
+				<div class="flex items-center mb-4">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						for="letterspacing">Show Letterspacing</label>
+					<div class="flex items-center ml-auto">
+						<input type="checkbox" id="letterspacing" class="" v-model="withLetterspacing" />
+					</div>
+
+
+
+
 				</div>
-			</div>
 
+				<div class="space-y-2 mb-4">
 
-			<div class="flex items-center mb-2">
-				<label for="baseFontSize" class="">Base Font Size</label>
-				<div class="flex items-center ml-auto">
-					<input type="range" name="baseFontSize" id="baseFontSize" v-model="baseFontSize" class="mr-4" />
-					{{ baseFontSize }}px
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center"
+						for=":r1u:-form-item">
+						Base Font Size
+						<span class="ml-auto">(px)</span>
+					</label>
+					<input v-model="baseFontSize"
+						class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+						id=":r1u:-form-item" aria-describedby=":r1u:-form-item-description" type="number" name="name" />
 				</div>
-			</div>
 
-			<div class="flex items-center mb-2">
-				<label for="selectedScale">Scale</label>
-				<div class="flex items-center ml-auto">
-					<select name="selectedScale" id="selectedScale" class="" v-model="selectedScale">
-						<option :value="value" v-for="(value, scale) in scales">{{ scale }} ({{ value }})</option>
-					</select>
+
+
+				<div class="space-y-2 mb-4">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						for=":r1o:-form-item">Scale</label>
+					<div class="relative w-max">
+						<select
+							class="inline-flex items-center justify-center rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 w-[200px] appearance-none bg-transparent font-normal"
+							name="selectedScale" id="selectedScale" aria-invalid="false" v-model="selectedScale">
+							<option :value="value" v-for="(value, scale) in scales">
+								{{ scale }} ({{ value }})
+							</option>
+						</select>
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+							class="absolute right-3 top-2.5 h-4 w-4 opacity-50">
+							<path
+								d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
+								fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+						</svg>
+					</div>
+					<p class="text-[0.8rem] text-muted-foreground">Tweak the <a
+							href="https://alistapart.com/article/more-meaningful-typography/"
+							class="text-blue-500 hover:text-blue-300" target="_blank">modular scale</a> for calculating font
+						size.</p>
 				</div>
+
+				<div class="space-y-2 mb-4">
+
+					<div class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+						Computed Font Sizes</div>
+					<ul class="text-sm">
+						<li v-for="(_, tokenName) in fontSizes">
+							<div class="flex">
+
+								{{ tokenName }}
+								<span class="ml-auto">{{ fontSizes[tokenName] }}</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</fieldset>
+
+
+			<div class="flex ml-auto">
+				<button @click.prevent="resetAll"
+					class="inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs mt-2"
+					type="button" data-dashlane-label="true" data-dashlane-rid="c6b49b6504099994"
+					data-form-type="action">Reset All</button>
 			</div>
 
-			<div class="grid grid-cols-3" v-for="(_, tokenName) in fontSizes" :key="tokenName">
-				<label :for="tokenName">{{ tokenName }}</label>
-				<input :id="tokenName" type="text" v-model="fontSizes[tokenName]" />
-			</div>
 		</div>
 	</section>
 </template>
@@ -201,11 +273,10 @@ const nullifyLetterspacing = () => {
 
 <style scoped>
 @import "../control.css";
+
 .property-control {
 	font-family: 'system-ui';
 	padding: 1rem;
 	font-size: 18px;
 	letter-spacing: 0;
-}
-
-</style>
+}</style>
