@@ -213,7 +213,7 @@ export default {
       xs: ['var(--font-size-xs)', 1.5],
       sm: ['var(--font-size-sm)', 1.5],
       base: ['var(--font-size-base)', 1.5],
-      lg: ['var(--font-size-lg)', 1.25],
+      lg: ['var(--font-size-lg)', 1.5],
       xl: ['var(--font-size-xl)', 1.25],
       '2xl': ['var(--font-size-2xl)', 1.25],
       '3xl': ['var(--font-size-3xl)', 1.25],
@@ -221,18 +221,18 @@ export default {
       '5xl': ['var(--font-size-5xl)', 1.25],
       '6xl': ['var(--font-size-6xl)', 1.25]
     },
-    lineHeight: {
-      // none: '1',
-      // '2x': 'var(--line-height-2xs)',
-      // 'xs': 'var(--line-height-xs)',
-      // 'sm': 'var(--line-height-sm)',
-      // 'base': 'var(--line-height-base)',
-      // 'lg': 'var(--line-height-lg)',
-      // 'xl': 'var(--line-height-xl)',
-      // '2xl': 'var(--line-height-2xl)',
-      // '3xl': 'var(--line-height-3xl)',
-      // '4xl': 'var(--line-height-4xl)'
-    },
+    // lineHeight: {
+    //   // none: '1',
+    //   // '2x': 'var(--line-height-2xs)',
+    //   // 'xs': 'var(--line-height-xs)',
+    //   // 'sm': 'var(--line-height-sm)',
+    //   // 'base': 'var(--line-height-base)',
+    //   // 'lg': 'var(--line-height-lg)',
+    //   // 'xl': 'var(--line-height-xl)',
+    //   // '2xl': 'var(--line-height-2xl)',
+    //   // '3xl': 'var(--line-height-3xl)',
+    //   // '4xl': 'var(--line-height-4xl)'
+    // },
     fontWeight: {
       light: 'var(--font-weights-light)',
       regular: 'var(--font-weights-regular)',
