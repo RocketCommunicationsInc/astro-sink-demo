@@ -1,5 +1,5 @@
 <template>
-	<section class="mt-4 bg-neutral-000 mb-4 rounded-xl text-black sticky top-0 z-[9999] property-control">
+	<section class="mt-4 bg-neutral-000 mb-4 rounded-xl text-black fixed top-0 right-0 z-[9999] property-control">
 		<div class="flex items-center ml-auto">
 			<button class="flex items-center ml-auto" @click.prevent="visible = !visible">
 				<span class="mr-2"> Configuration </span>
