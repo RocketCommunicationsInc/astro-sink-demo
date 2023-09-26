@@ -222,6 +222,7 @@ const calculateFontSizes = () => {
 };
 
 watch(baseFontSize, async () => {
+	// base.value = (baseFontSize.value / 4)
 	calculateFontSizes();
 });
 watch(selectedScale, async () => {
