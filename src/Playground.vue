@@ -4,17 +4,7 @@ import SampleAppSlideOut from './components/SampleAppSlideOut.vue'
 import CardTypography from './components/CardTypography.vue'
 import GRMEquipmentJobDetails from './components/GRMEquipmentJobDetails.vue';
 import CardTree from './components/CardTree.vue'
-
-const segmentedButtonData = [
-	{ label: "First segment" },
-	{ label: "Second segment", selected: true },
-	{ label: "Third segment" }
-];
-
-
-
-console.log('tree', CardTree.props.name.default);
-
+import CardTimeline from "./components/CardTimeline.vue";
 </script>
 
 <template>
@@ -70,7 +60,9 @@ console.log('tree', CardTree.props.name.default);
 			<rux-card class="">
 				<rux-container>
 					<header slot="header">Header</header>
-
+					<div class="p-4 flex">
+						<rux-indeterminate-progress class="m-auto"></rux-indeterminate-progress>
+					</div>
 					<div slot="footer" class="flex items-center">
 						<rux-button borderless>Cancel</rux-button>
 						<div class="flex items-center gap-4 ml-auto">
@@ -145,56 +137,10 @@ console.log('tree', CardTree.props.name.default);
 
 			<rux-notification open status="critical" class="col-span-3 w-full block"
 				message="This is a notification banner. It won’t disappear until the user dismisses it."></rux-notification>
-			<rux-card class="col-span-3">
-				<rux-timeline timezone="America/New_York" start="2021-02-01T00:00:00.000Z" end="2021-02-03T00:00:00.000Z"
-					playhead="2021-02-01T04:00:00.000Z" interval="hour" zoom="2">
-					<rux-track>
-						<div slot="label">Region 1</div>
-						<rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T02:00:00Z" status="serious">
-							Event 1.2
-						</rux-time-region>
-					</rux-track>
-					<rux-track>
-						<div slot="label">Region 2</div>
-						<rux-time-region start="2021-02-01T10:00:00Z" end="2021-02-01T12:00:00Z" status="serious">
-							Event 2.1
-						</rux-time-region>
-					</rux-track>
-					<rux-track>
-						<div slot="label">Region 3</div>
-						<rux-time-region start="2021-02-01T00:00:00Z" end="2021-02-02T02:00:00Z" status="standby">
-							Event 3.1
-						</rux-time-region>
-					</rux-track>
-					<rux-track>
-						<div slot="label">Region 4</div>
-						<rux-time-region start="2021-02-01T03:00:00Z" end="2021-02-02T04:33:00Z" status="critical">
-							Event 4.1
-						</rux-time-region>
-					</rux-track>
-					<rux-track>
-						<div slot="label">Region 5</div>
-						<rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="caution">
-							Event 5.1
-						</rux-time-region>
-					</rux-track>
-					<rux-track>
-						<div slot="label">Region 6</div>
-						<rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="normal">
-							Event 6.1
-						</rux-time-region>
-					</rux-track>
-					<rux-track>
-						<div slot="label">Region 7</div>
-						<rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="normal">
-							Event 7.1
-						</rux-time-region>
-					</rux-track>
-					<rux-track slot="ruler">
-						<rux-ruler></rux-ruler>
-					</rux-track>
-				</rux-timeline>
-			</rux-card>
+			<rux-container class="col-span-3">
+				<CardTimeline></CardTimeline>
+			</rux-container>
+
 
 			<rux-container class="col-span-2">
 				<div slot="header">Sign In</div>
@@ -276,26 +222,7 @@ console.log('tree', CardTree.props.name.default);
 				</div>
 			</rux-card>
 
-			<rux-card>
 
-				<div class="grid grid-cols-2 gap-4">
-					<rux-monitoring-icon class="m-auto"></rux-monitoring-icon>
-					<rux-indeterminate-progress class="m-auto"></rux-indeterminate-progress>
-
-					<div class="m-auto flex gap-4">
-						<rux-tag status="pass"> </rux-tag>
-						<rux-tag status="fail"> </rux-tag>
-						<rux-tag status="unknown"> </rux-tag>
-					</div>
-
-					<rux-progress class="col-span-2" value="1"></rux-progress>
-					<rux-push-button checked label="Push Button"></rux-push-button>
-
-
-					<rux-switch></rux-switch>
-				</div>
-				<rux-segmented-button class="mt-4" :data="segmentedButtonData"></rux-segmented-button>
-			</rux-card>
 
 			<rux-container style="--body-padding: 0" class="overflow-hidden">
 
@@ -376,7 +303,7 @@ console.log('tree', CardTree.props.name.default);
 			<SampleAppSlideOut class="col-span-1"></SampleAppSlideOut>
 
 			<CardTypography class="col-span-1"></CardTypography>
-			
+
 			<rux-container class="col-span-3">
 				<header slot="Font Sizes"></header>
 				<ul class="flex flex-col gap-4">
@@ -525,23 +452,23 @@ console.log('tree', CardTree.props.name.default);
 							you've had. He didn't say any more but we've always been unusually communicative in a reserved
 							way, and I understood that he meant a great deal more than that. In consequence I'm inclined to
 							reserve all judgments, a habit that has opened up many curious natures to me and also made me
-						the victim of not a few veteran bores."</p>
-					<p class="text-right text-sm text-secondary">line-height-relaxed</p>
-				</li>
-				<li>
-					<p class="leading-loose">In my younger and more vulnerable years my father gave me some advice that
-						I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he
-						told me, "just remember that all the people in this world haven't had the advantages that you've
-						had. He didn't say any more but we've always been unusually communicative in a reserved way, and
-						I understood that he meant a great deal more than that. In consequence I'm inclined to reserve
-						all judgments, a habit that has opened up many curious natures to me and also made me the victim
-						of not a few veteran bores."</p>
-					<p class="text-right text-sm text-secondary">line-height-loose</p>
-				</li>
-			</ul>
-		</rux-container>
+							the victim of not a few veteran bores."</p>
+						<p class="text-right text-sm text-secondary">line-height-relaxed</p>
+					</li>
+					<li>
+						<p class="leading-loose">In my younger and more vulnerable years my father gave me some advice that
+							I've been turning over in my mind ever since. "Whenever you feel like criticizing any one," he
+							told me, "just remember that all the people in this world haven't had the advantages that you've
+							had. He didn't say any more but we've always been unusually communicative in a reserved way, and
+							I understood that he meant a great deal more than that. In consequence I'm inclined to reserve
+							all judgments, a habit that has opened up many curious natures to me and also made me the victim
+							of not a few veteran bores."</p>
+						<p class="text-right text-sm text-secondary">line-height-loose</p>
+					</li>
+				</ul>
+			</rux-container>
+		</div>
 	</div>
-</div>
 </template>
 
 <style>
@@ -564,4 +491,5 @@ console.log('tree', CardTree.props.name.default);
 rux-card {
 	--body-padding: 0;
 	overflow: hidden;
-}</style>
+}
+</style>

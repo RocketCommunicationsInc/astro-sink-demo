@@ -21,22 +21,9 @@
 			</button>
 		</div>
 		<div class="flex flex-col w-full mt-4" v-if="visible">
-			<fieldset>
-				<legend class="text-lg mb-2 font-bold">Spacing</legend>
-				<div class="space-y-2">
-					<label
-						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center"
-						for=":r1u:-form-item">
-						Base Spacing Unit
-						<span class="ml-auto">(px)</span>
-					</label>
-					<input v-model="base"
-						class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-						id=":r1u:-form-item" aria-describedby=":r1u:-form-item-description" type="number" name="name" />
-				</div>
-			</fieldset>
 
-			<fieldset class="mt-8">
+
+			<fieldset class="mb-8">
 				<legend class="text-lg mb-2 font-bold">Typography</legend>
 
 				<div class="space-y-2 mb-4">
@@ -73,7 +60,8 @@
 					</label>
 					<input v-model="baseFontSize"
 						class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-						id=":r1u:-form-item" aria-describedby=":r1u:-form-item-description" type="number" name="name" />
+						type="number" name="name" />
+					<p class="text-[0.8rem] text-muted-foreground">Automatically scales base spacing unit</p>
 				</div>
 
 				<div class="space-y-2 mb-4">
@@ -126,6 +114,21 @@
 					<div class="flex items-center ml-auto">
 						<input type="checkbox" id="letterspacing" class="" v-model="withLetterspacing" />
 					</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend class="text-lg mb-2 font-bold">Spacing</legend>
+				<div class="space-y-2">
+					<label
+						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center"
+						for=":r1u:-form-item">
+						Base Spacing Unit
+						<span class="ml-auto">(px)</span>
+					</label>
+					<input v-model="base"
+						class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+						id=":r1u:-form-item" aria-describedby=":r1u:-form-item-description" type="number" name="name" />
 				</div>
 			</fieldset>
 
@@ -222,7 +225,7 @@ const calculateFontSizes = () => {
 };
 
 watch(baseFontSize, async () => {
-	// base.value = (baseFontSize.value / 4)
+	base.value = (baseFontSize.value / 4)
 	calculateFontSizes();
 });
 watch(selectedScale, async () => {
