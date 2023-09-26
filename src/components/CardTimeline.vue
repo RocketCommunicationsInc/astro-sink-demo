@@ -5,7 +5,8 @@
 			Timeline
 		</div>
 		<div class="m-auto">
-			<rux-segmented-button @ruxchange="setInterval" :data="intervalOptions"></rux-segmented-button>
+			<rux-segmented-button @ruxchange="currentInterval = $event.detail"
+				:data.prop="intervalOptions"></rux-segmented-button>
 		</div>
 		<div class="ml-auto">
 			<rux-slider min="2" max="11" :value="zoom" @ruxinput="zoom = $event.target.value"
@@ -69,25 +70,17 @@
 import { ref, reactive, computed } from 'vue'
 const zoom = ref(2)
 
-let intervalOptions = reactive([
+let intervalOptions = [
 	{
 		label: "day",
 	},
 	{
-		label: "hour",
-		selected: true
+		label: "hour"
 	}
-])
+]
 
-const setInterval = (event) => {
-	const opt = intervalOptions.find(opt => opt.label === event.detail)
-	opt.selected = true
-}
+const currentInterval = ref('day')
 
-const currentInterval = computed(() => {
-	const opt = intervalOptions.find(opt => opt.selected)
-	return opt.label
-})
 </script>
 
 <style scoped></style>

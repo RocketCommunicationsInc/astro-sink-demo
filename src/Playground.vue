@@ -137,7 +137,7 @@ import CardTimeline from "./components/CardTimeline.vue";
 
 			<rux-notification open status="critical" class="col-span-3 w-full block"
 				message="This is a notification banner. It won’t disappear until the user dismisses it."></rux-notification>
-			<rux-container class="col-span-3">
+			<rux-container class="col-span-3" style="--body-padding: 0;">
 				<CardTimeline></CardTimeline>
 			</rux-container>
 
